@@ -1,20 +1,13 @@
-import { Fragment } from "react"
-import BloodGroupCard from "../../components/blood-group-card/blood-group-card.component"
-import FrontImage from "../../components/frontImage/frontImage.component"
-import { bloodGroups } from "../../utils/dummy"
-import './blood.css'
-
+import { Route, Routes } from "react-router-dom"
+import BloodDonaters from "../blood-group/blood-donaters.router"
+import BloodGroupContainer from "../../components/blood-groups-container/blood-groups-container.component"
 
 const BloodRouter = ()=>{
     return(
-        <Fragment>
-            <FrontImage title={"Bloods"}/>
-            <div className="blood-groups">
-                {
-                    bloodGroups.map(({bloodGroup,id})=> <BloodGroupCard key={id} bloodGroup={bloodGroup}/>)
-                }
-            </div>
-        </Fragment>
+        <Routes>
+            <Route index element={<BloodGroupContainer/>}/>
+            <Route path="/:id" element={<BloodDonaters/>}/>
+        </Routes>
     )
 }
 

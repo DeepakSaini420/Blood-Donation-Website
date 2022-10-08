@@ -65,3 +65,42 @@ export const bloodGroups = [
         bloodGroup:'AB-'
     },
 ]
+
+export const bloods = [
+    {
+        idx:1,
+        quantity:3,
+        nameOfDoner:'Deepak Saini',
+        bloodGroup:'B-',
+        location:'Ramgarh',
+        city:'Panchkula',
+        state:'Haryana'
+    },
+    {
+        idx:2,
+        quantity:1,
+        nameOfDoner:'Vijender',
+        bloodGroup:'A-',
+        location:'Chandigarh',
+        city:'Chandigarh',
+        state:'Punjab'
+    },
+    {
+        idx:3,
+        quantity:4,
+        nameOfDoner:'Himanshu Aggarwal',
+        bloodGroup:'A-',
+        location:'Dhuri',
+        city:'Dhuri',
+        state:'Sangrur'
+    },
+    {
+        idx:4,
+        quantity:2,
+        nameOfDoner:'Himanshu Garh',
+        bloodGroup:'O+',
+        location:'Muzaffarpur',
+        city:'Muzaffarpur',
+        state:'Bihar'
+    },
+]
