@@ -15,11 +15,11 @@ const Contact = ()=>{
                             <h1>Leave A Message</h1>
                         </div>
                         <div>
-                            <Input type={"text"} placeholder={"Enter Name"} className=""/>
+                            <Input type={"text"} placeholder={"Enter Name"} className="input_text"/>
                             <Input type={"email"} placeholder={"Enter Email"} className="leftEle" />
                         </div>
                         <div>
-                            <Input type={"text"} placeholder={"Enter Subject"} className=""/>
+                            <Input type={"text"} placeholder={"Enter Subject"} className="input_text"/>
                             <Input type={"number"} placeholder={"Enter Phone"} className="leftEle"/>
                         </div>
                         <div>
