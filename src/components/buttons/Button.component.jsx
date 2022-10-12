@@ -1,6 +1,6 @@
 import './Button.css'
 
-const Button = ({name,title})=>{
+const Button = ({name,title,customClickEvent,setUser,email,password,user})=>{
     const classNames = {
         'black-wt-button':'black-wt-button',
         'black-wt-button-sm':'black-wt-button-sm',
@@ -8,7 +8,7 @@ const Button = ({name,title})=>{
         'red-wt-button-sm':'red-wt-button-sm',
     }
     return(
-        <button className={classNames[name]}>
+        <button className={classNames[name]} onClick={customClickEvent}>
             {title}
         </button>
     )

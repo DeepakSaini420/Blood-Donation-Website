@@ -1,11 +1,20 @@
-import { Fragment } from "react"
+import { Fragment,useContext } from "react"
 import { Link, Outlet } from "react-router-dom"
+import { UserContext } from "../../context/user.context"
 import Button from "../../components/buttons/Button.component"
 import Footer from "../../components/footer/footer.component"
 import logo from '../../static/Logo.png'
 import './navigation.css'
 
 const Navigation = ()=>{
+
+    const { user,setUser } = useContext(UserContext);
+
+    console.log(user);
+
+    const signOut = ()=>{
+        setUser(undefined);
+    }
     return(
         <Fragment>
             <div className="navigation">
@@ -30,7 +39,15 @@ const Navigation = ()=>{
                         <Link to="/campaigns">Campaigns</Link>
                     </div>
                     <div className="link">
-                        <Link to="/sign-up">Sign Up</Link>
+                        {
+                            user ? (
+                                <div onClick={signOut}>
+                                    <Link>Sign Out</Link>
+                                </div>
+                            ) : (
+                                <Link to="/sign-up">Sign Up</Link>
+                            )
+                        }
                     </div>
                 </div>
             </div>

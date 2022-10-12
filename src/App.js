@@ -5,6 +5,7 @@ import Contact from './Routes/contact/contact.route';
 import About from './Routes/about/about.route';
 import CampaignsRoute from './Routes/campaigns/campaigns.router';
 import BloodRouter from './Routes/blood/blood.router';
+import SignUp from './Routes/sign-up/signUp.router';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path='/about' element={<About/>}/>
           <Route path='/campaigns' element={<CampaignsRoute/>}/>
           <Route path='/bloods/*' element={<BloodRouter/>} />
+          <Route path="/sign-up" element={<SignUp/>}/>
         </Route>
       </Routes>
     </div>

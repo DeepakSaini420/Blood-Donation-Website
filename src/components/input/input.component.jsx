@@ -4,7 +4,6 @@ const Input = ({type,placeholder,className,setData})=>{
 
     const setText = (e)=>{
         setData(e.target.value);
-
     }
 
     return(
