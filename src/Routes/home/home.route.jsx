@@ -15,8 +15,8 @@ const Home = ()=>{
                 </div>
             </div>
             <div className='blood-cards'>
-                <BloodCard title={"Become a Donor"} buttonTitle={"Donate"}/>
-                <BloodCard title={"Want Some Blood?"} buttonTitle={"Get Blood"}/>
+                <BloodCard title={"Become a Donor"} buttonTitle={"Donate"} redirect={'donate'}/>
+                <BloodCard title={"Want Some Blood?"} buttonTitle={"Get Blood"} redirect={'bloods'}/>
             </div>
             <Welcome/>
         </Fragment>

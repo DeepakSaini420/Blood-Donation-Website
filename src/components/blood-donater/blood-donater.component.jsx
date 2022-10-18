@@ -14,7 +14,11 @@ const BloodDonater = ({ quantity,nameOfDoner,location,city,State })=>{
             </div>
             <div className='get-blood-div'>
                 <span>{location}, {city} {State}</span>
-                <Button title={"Get Blood"} name={"red-wt-button-sm"}/>
+                {
+                    nameOfDoner? (
+                        <Button title={"Get Blood"} name={"red-wt-button-sm"}/>
+                    ):''
+                }
             </div>
         </div>
     )

@@ -1,16 +1,20 @@
-import { Fragment,useContext } from "react"
-import { Link, Outlet } from "react-router-dom"
+import { Fragment,useContext,useEffect } from "react"
+import { Link, Outlet,useLocation } from "react-router-dom"
 import { UserContext } from "../../context/user.context"
+import { bloods } from '../../utils/dummy';
 import Button from "../../components/buttons/Button.component"
 import Footer from "../../components/footer/footer.component"
 import logo from '../../static/Logo.png'
 import './navigation.css'
 
 const Navigation = ()=>{
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
 
     const { user,setUser } = useContext(UserContext);
-
-    console.log(user);
 
     const signOut = ()=>{
         setUser(undefined);
@@ -41,11 +45,42 @@ const Navigation = ()=>{
                     <div className="link">
                         {
                             user ? (
-                                <div onClick={signOut}>
-                                    <Link>Sign Out</Link>
+                                <div>
+                                    <div onClick={signOut}>
+                                        <Link>Sign Out</Link>
+                                    </div>
                                 </div>
+                        
                             ) : (
                                 <Link to="/sign-up">Sign Up</Link>
+                            )
+                        }
+                    </div>
+                    <div className="link">
+                        {
+                            user && !user.isAdmin ? (
+                                <div>
+                                    <div>
+                                        <Link to="/info">User Info</Link>
+                                    </div>
+                                </div>
+                        
+                            ) : (
+                                <div></div>
+                            )
+                        }
+                    </div>
+                    <div className="link">
+                        {
+                            user && user.isAdmin ? (
+                                <div>
+                                    <div>
+                                        <Link to="/admin">Admin</Link>
+                                    </div>
+                                </div>
+                        
+                            ) : (
+                                <div></div>
                             )
                         }
                     </div>

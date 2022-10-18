@@ -64,3 +64,19 @@
     background-color: black;
     color: white;
 }
+
+.wt-black-button-sm{
+    background-color: black;
+    border: none;
+    border-radius: 45px;
+    height: 3.2rem;
+    padding: 3px 55px  !important;
+    color: white;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: all ease-in-out 0.3s;
+}
+.wt-black-button-sm:hover{
+    background-color: rgb(220, 108, 108);
+    color: black;
+}

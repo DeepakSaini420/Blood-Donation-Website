@@ -1,4 +1,4 @@
-import { useState,useContext } from 'react'
+import { useContext } from 'react'
 import { useParams } from 'react-router-dom'
 import { BloodDonaterProvider } from '../../context/bloodDonaters.context'
 import BloodDonater from "../../components/blood-donater/blood-donater.component"
