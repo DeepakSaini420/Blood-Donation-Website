@@ -4,10 +4,18 @@ import './homepage.css'
 const Homepage = ()=>{
     return(
         <div className='homepage'>
-            <FrontCompoonent imgSrc={imsrc}/>
-            <FrontCompoonent imgSrc={imsrc}/>
-            <FrontCompoonent imgSrc={imsrc}/>
-            <FrontCompoonent imgSrc={imsrc} title={'Messages'}/>
+            <div className='back-div'>
+                <FrontCompoonent imgSrc={imsrc} title={'Users'}/>
+            </div>
+            <div className='back-div'>
+                <FrontCompoonent imgSrc={imsrc} title={'Blood-Requested'}/>
+            </div>
+            <div className='back-div'>
+                <FrontCompoonent imgSrc={imsrc} title={'Blood-Accepted'}/>
+            </div>
+            <div className='back-div'>
+                <FrontCompoonent imgSrc={imsrc} title={'Messages'}/>
+            </div>
         </div>
     )
 }

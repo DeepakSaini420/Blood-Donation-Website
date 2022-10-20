@@ -5,7 +5,7 @@ import BloodDonater from "../../components/blood-donater/blood-donater.component
 import './info.css'
 
 const Info = () =>{
-    const { bloodDonated } = useContext(BloodDonaterProvider);
+    const { bloodDonated,bloodRequests } = useContext(BloodDonaterProvider);
     const { user } = useContext(UserContext);
     console.log(bloodDonated);
     return(
@@ -23,6 +23,21 @@ const Info = () =>{
                     }
                 })
             }
+            <div className="info">
+                <h1>Blood Requested:-</h1>
+                {
+                    bloodRequests.map((blood,idx)=>{
+                        console.log(blood)
+                        if(blood.email===user.email){
+                            return(
+                                    <div className="space">
+                                        <BloodDonater key={idx} quantity={blood.quantity} location={blood.location} city={blood.city} State={blood.state}/>
+                                    </div>
+                                ) 
+                        }
+                    })
+                }
+            </div>
         </div>
     )
 }

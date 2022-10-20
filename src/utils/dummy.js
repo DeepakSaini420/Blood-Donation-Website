@@ -122,3 +122,5 @@ export const bloods = [
         state:'Jammu'
     },
 ]
+
+export const bloodRequestsArray=[];

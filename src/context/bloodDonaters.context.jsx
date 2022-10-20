@@ -20,9 +20,12 @@ const searchFilter =  (data,searchValue)=>{
 export const BloodDonaterProvider = createContext({
     data:[],
     bloodDonated:[],
+    bloodRequests:[],
+    bloodsAccepted:[],
     setData:()=>null,
     search: ()=>null,
-    addBlood:()=>null
+    addBlood:()=>null,
+    setBloodRequests:()=>null
 })
 
 
@@ -30,6 +33,8 @@ export const BloodStateContext = ({ children })=>{
 
     const [data,setData] = useState([]);
     const [bloodDonated,setBloodDonated] = useState([]);
+    const [bloodRequests,setBloodRequests] = useState([]);
+    const [bloodsAccepted,setBloodAccepted] = useState([]);
 
     const search = (searchValue)=>{
         setData(searchFilter(data,searchValue));
@@ -45,6 +50,8 @@ export const BloodStateContext = ({ children })=>{
         search,
         addBlood,
         setData,
+        bloodRequests,
+        setBloodRequests,
         bloodDonated
     }
 

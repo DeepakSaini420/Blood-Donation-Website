@@ -33,7 +33,7 @@ function App() {
           <Route path='/donate' element={<Donate/>}/>
           <Route path='/info' element={<Info/>}/>
         </Route>
-        <Route path='/admin' element={<Admin/>} />
+        <Route path='/admin/*' element={<Admin/>} />
       </Routes>
   );
 }

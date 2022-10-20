@@ -1,7 +1,24 @@
+import { useContext } from 'react';
+import { BloodDonaterProvider } from '../../context/bloodDonaters.context';
+import { UserContext } from '../../context/user.context'; 
+import { bloodRequestsArray } from '../../utils/dummy';
 import Button from '../buttons/Button.component';
 import './blood-donater.css'
 
 const BloodDonater = ({ quantity,nameOfDoner,location,city,State })=>{
+
+    const { bloodRequests,setBloodRequests } = useContext(BloodDonaterProvider);
+    const { user } = useContext(UserContext);
+
+    const requestClick = ()=>{
+        if(user){
+            bloodRequestsArray.push({email:user.email,name:nameOfDoner,location,city,State,quantity});
+            window.localStorage.setItem('bloodRequestArray',JSON.stringify(bloodRequestsArray));
+            setBloodRequests([...bloodRequests,{email:user.email,name:nameOfDoner,location,city,State,quantity}]);
+            console.log(bloodRequests);
+        }
+    }
+
     return(
         <div className="blood-donater">
             <div>
@@ -16,7 +33,7 @@ const BloodDonater = ({ quantity,nameOfDoner,location,city,State })=>{
                 <span>{location}, {city} {State}</span>
                 {
                     nameOfDoner? (
-                        <Button title={"Get Blood"} name={"red-wt-button-sm"}/>
+                        <Button title={"Get Blood"} customClickEvent={requestClick} name={"red-wt-button-sm"}/>
                     ):''
                 }
             </div>

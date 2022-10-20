@@ -24,6 +24,7 @@ const SignUp = ()=>{
         if(!(validateEmail(email) && validPassword(password))) return;
         console.log(signUpUser({email,password,isAdmin:false}))
         if(!signUpUser({email,password})){
+            window.alert('This Account Alerady Exists!');
             return;
         }else{
             navigate('/');
